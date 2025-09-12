@@ -1,0 +1,33 @@
+services:
+  # Backend API Service
+  - type: web
+    name: ai-presentation-backend
+    runtime: python3
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python main.py
+    plan: free
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 8000
+      - key: HOST
+        value: 0.0.0.0
+    healthCheckPath: /health
+    
+  # Frontend Streamlit Service  
+  - type: web
+    name: ai-presentation-frontend
+    runtime: python3
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: streamlit run frontend.py --server.port $PORT --server.address 0.0.0.0
+    plan: free
+    envVars:
+      - key: API_URL
+        value: https://ai-presentation-backend.onrender.com
+      - key: PORT
+        value: 10000

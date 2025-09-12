@@ -1,0 +1,30 @@
+# requirements
+fastapi
+uvicorn
+streamlit
+python-multipart
+python-dotenv
+requests
+
+# LangChain and LangGraph
+langchain
+langchain-groq
+langchain-community
+langchain-core
+langchain-huggingface
+langgraph
+
+# Document processing
+PyPDF2
+pypdf
+
+# Vector store and embeddings
+faiss-cpu
+sentence-transformers
+
+# PowerPoint generation
+python-pptx
+
+# Additional utilities
+pathlib
+typing-extensions
