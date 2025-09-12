@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # Constants
-API_URL = API_URL
+API_URL = 'https://ai-presentation-backend.onrender.com'
 
 # Custom CSS for elegant styling
 st.markdown("""
@@ -421,3 +421,4 @@ def display_slide(slide_num, slide_data, expanded=False):
 if __name__ == "__main__":
 
     main()
+
