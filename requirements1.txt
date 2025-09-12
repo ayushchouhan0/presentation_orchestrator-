@@ -19,10 +19,10 @@ pypdf
 
 # Vector store and embeddings
 faiss-cpu
-sentence-transformers
 
 # PowerPoint generation
 python-pptx
 
 # Additional utilities
 typing-extensions
+
