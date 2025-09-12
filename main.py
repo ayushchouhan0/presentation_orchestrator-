@@ -64,7 +64,7 @@ class DocumentProcessor:
             length_function=len,
         )
         # Use free HuggingFace embeddings
-        embeddings = HuggingFaceEndpointEmbeddings(
+        self.embeddings = HuggingFaceEndpointEmbeddings(
             model='sentence-transformers/all-mpnet-base-v2',
             task="feature-extraction",
             huggingfacehub_api_token=os.getenv('HUGGINGFACEHUB_API_TOKEN'))
@@ -602,3 +602,4 @@ async def health_check():
 if __name__ == "__main__":
     logger.info("Starting Simple AI Presentation Orchestrator...")
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
