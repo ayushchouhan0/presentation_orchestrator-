@@ -22,7 +22,7 @@ from langchain_groq import ChatGroq
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -64,9 +64,11 @@ class DocumentProcessor:
             length_function=len,
         )
         # Use free HuggingFace embeddings
-        self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
+        embeddings = HuggingFaceEndpointEmbeddings(
+            model='sentence-transformers/all-mpnet-base-v2',
+            task="feature-extraction",
+            huggingfacehub_api_token=os.getenv('HUGGINGFACEHUB_API_TOKEN'))
+        
         self.vectorstore = None
     
     def process_pdf(self, file_path: str) -> tuple[str, List[str]]:
