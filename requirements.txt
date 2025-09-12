@@ -1,7 +1,6 @@
 # requirements
 fastapi
 uvicorn
-streamlit
 python-multipart
 python-dotenv
 requests
@@ -26,5 +25,4 @@ sentence-transformers
 python-pptx
 
 # Additional utilities
-pathlib
 typing-extensions
