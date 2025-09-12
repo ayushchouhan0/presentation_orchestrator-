@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # Constants
-API_URL = "http://localhost:8000"
+API_URL = API_URL
 
 # Custom CSS for elegant styling
 st.markdown("""
@@ -419,4 +419,5 @@ def display_slide(slide_num, slide_data, expanded=False):
         st.markdown("---")
 
 if __name__ == "__main__":
+
     main()
