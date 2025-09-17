@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 # Constants
-API_URL = "http://localhost:8000"
+API_URL = "https://ai-presentation-backend.onrender.com"
 
 # Custom CSS for elegant styling
 st.markdown("""
@@ -707,3 +707,4 @@ def create_enhanced_text_export(slides, metadata):
 
 if __name__ == "__main__":
     main()
+
